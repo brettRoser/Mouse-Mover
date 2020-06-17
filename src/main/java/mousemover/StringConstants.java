@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.util.screensaversubstitute;
+package mousemover;
 
-public class SS_StringConstants {
+public class StringConstants {
 
     public static final String START_MOUSE_MOVEMENT_BUTTON_TEXT = "Start Mouse Movement";
     public static final String STOP_MOUSE_MOVEMENT_BUTTON_TEXT = "Stop Mouse Movement";
@@ -21,7 +16,7 @@ public class SS_StringConstants {
     public static final String SET_TIMER_MENU_ITEM_TEXT = "Set Timer";
     public static final String EXIT_MENU_ITEM_TEXT = "Exit";
 
-    public static final String MAIN_APPLICATION_TITLE = "Screensaver Substitute v2.0";
+    public static final String MAIN_APPLICATION_TITLE = "Mouse Mover";
     public static final String TIMER_FRAME_DIALOG_TITLE = "Set Timer Value";
 
     public static final String INVALID_TIME_ENTERED_VALUE_TEXT = "To avoid mouse movement error, timer value must be at least 3 seconds!";

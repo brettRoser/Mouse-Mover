@@ -1,4 +1,4 @@
-Screensaver-Substitute
+Mouse-Mover
 ======================
 
-This program gives you the option to enable mouse movement which will prevent your screen from locking/sleeping due to user inactivity.
+This program will move your mouse to prevent your screen from locking/sleeping due to user inactivity. You are able to set the interval that the mouse moves. This application is a Java Swing app that is using the Robot class to move the mouse.

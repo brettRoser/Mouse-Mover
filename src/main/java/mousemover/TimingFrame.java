@@ -1,9 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This class allows the user to set the interval of the mouse movement.
  */
-package com.util.screensaversubstitute;
+package mousemover;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -23,22 +21,18 @@ import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-public class SS_SetTimerFrame extends JFrame implements ActionListener,
-   DocumentListener, KeyListener
+@SuppressWarnings("serial")
+public class TimingFrame extends JFrame implements ActionListener, DocumentListener, KeyListener
 {
-  private final JButton exitButton =
-    new JButton(SS_StringConstants.EXIT_TIMER_FRAME_BUTTON_TEXT);
+  private final JButton exitButton = new JButton(StringConstants.EXIT_TIMER_FRAME_BUTTON_TEXT);
   private int pauseInterval = 20000; // milliseconds
-  private final JLabel enterTimerValueLabel =
-    new JLabel(SS_StringConstants.ENTER_TIMER_VALUE_LABEL_TEXT);
+  private final JLabel enterTimerValueLabel = new JLabel(StringConstants.ENTER_TIMER_VALUE_LABEL_TEXT);
   private final JTextField enterTimerValueField = new JTextField();
-  private final JLabel secondsLabel =
-    new JLabel(SS_StringConstants.SECONDS_TIMER_FRAME_LABEL_TEXT);
-  private final JButton applyButton =
-    new JButton(SS_StringConstants.APPLY_TIMER_FRAME_BUTTON_TEXT);
+  private final JLabel secondsLabel = new JLabel(StringConstants.SECONDS_TIMER_FRAME_LABEL_TEXT);
+  private final JButton applyButton = new JButton(StringConstants.APPLY_TIMER_FRAME_BUTTON_TEXT);
 
-  public SS_SetTimerFrame() {
-    super(SS_StringConstants.TIMER_FRAME_DIALOG_TITLE);
+  public TimingFrame() {
+    super(StringConstants.TIMER_FRAME_DIALOG_TITLE);
     final int FRAME_WIDTH = 270;
     final int FRAME_HEIGHT = 100;
     setSize(FRAME_WIDTH, FRAME_HEIGHT);
@@ -59,8 +53,7 @@ public class SS_SetTimerFrame extends JFrame implements ActionListener,
 
     enterTimerValueField.setPreferredSize(new Dimension(50, 26));
     enterTimerValueField.setText("" + pauseInterval/1000);
-    enterTimerValueField.setCaretPosition(enterTimerValueField.
-       getText().length());
+    enterTimerValueField.setCaretPosition(enterTimerValueField.getText().length());
 
     dataPanel.add(enterTimerValueLabel);
     dataPanel.add(enterTimerValueField);
@@ -102,7 +95,7 @@ public class SS_SetTimerFrame extends JFrame implements ActionListener,
 
       if(pauseInterval < 3) {
         JOptionPane.showMessageDialog(null,
-           SS_StringConstants.INVALID_TIME_ENTERED_VALUE_TEXT,
+           StringConstants.INVALID_TIME_ENTERED_VALUE_TEXT,
            "Alert", JOptionPane.ERROR_MESSAGE);
         enterTimerValueField.setText("");
         disposeOfWindow = false;
@@ -121,21 +114,19 @@ public class SS_SetTimerFrame extends JFrame implements ActionListener,
       if(disposeOfWindow) {
         this.dispose();
       } else {
-        //System.out.println("Pause Interval is " + pauseInterval);
         enterTimerValueField.setText("20");
-        //setPauseValue(pauseInterval);
       }
     } else if(evt.getSource().equals(exitButton)) {
       this.dispose();
     } else {
       JOptionPane.showMessageDialog(null,
-         SS_StringConstants.ACTION_PERFORMED_INVALID_CHOICE,
+         StringConstants.ACTION_PERFORMED_INVALID_CHOICE,
         "Alert", JOptionPane.ERROR_MESSAGE);
     }
   }
 
   /*
-   * This method is a public getter which is used in the SS_MainFrame class
+   * This method is a public getter which is used in the MainFrame class
    * to change the pause interval at which the mouse moves.
    */
   public int getPauseValue() {
