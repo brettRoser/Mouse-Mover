@@ -28,12 +28,9 @@ public class MainFrame extends JFrame implements ActionListener, Runnable {
   private final JButton stopMouseMovementButton = new JButton(StringConstants.STOP_MOUSE_MOVEMENT_BUTTON_TEXT);
   private final JButton exitButton = new JButton(StringConstants.EXIT_MOUSE_MOVEMENT_BUTTON_TEXT);
 
-  private final JMenuBar menubar = new JMenuBar();
-  private final JMenu fileMenu = new JMenu(StringConstants.FILE_MENU_ITEM_TEXT);
-  private final JMenu optionsMenu = new JMenu(StringConstants.OPTIONS_MENU_ITEM_TEXT);
   private final JMenuItem setTimerMenuItem = new JMenuItem(StringConstants.SET_TIMER_MENU_ITEM_TEXT);
   private final JMenuItem exitMenuItem = new JMenuItem(StringConstants.EXIT_MENU_ITEM_TEXT);
-
+  
   private final TimingFrame timerFrame = new TimingFrame();
 
   private final static Dimension screenDimensions = Toolkit.getDefaultToolkit().getScreenSize();
@@ -84,6 +81,10 @@ public class MainFrame extends JFrame implements ActionListener, Runnable {
     exitMenuItem.setAccelerator(KeyStroke.getKeyStroke(
       KeyEvent.VK_Q, ActionEvent.CTRL_MASK));
 
+    JMenuBar menubar = new JMenuBar();
+    JMenu fileMenu = new JMenu(StringConstants.FILE_MENU_ITEM_TEXT);
+    JMenu optionsMenu = new JMenu(StringConstants.OPTIONS_MENU_ITEM_TEXT);
+    
     fileMenu.add(exitMenuItem);
     optionsMenu.add(setTimerMenuItem);
     menubar.add(fileMenu);

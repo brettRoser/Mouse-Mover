@@ -25,11 +25,9 @@ import javax.swing.event.DocumentListener;
 public class TimingFrame extends JFrame implements ActionListener, DocumentListener, KeyListener
 {
   private final JButton exitButton = new JButton(StringConstants.EXIT_TIMER_FRAME_BUTTON_TEXT);
-  private int pauseInterval = 20000; // milliseconds
-  private final JLabel enterTimerValueLabel = new JLabel(StringConstants.ENTER_TIMER_VALUE_LABEL_TEXT);
-  private final JTextField enterTimerValueField = new JTextField();
-  private final JLabel secondsLabel = new JLabel(StringConstants.SECONDS_TIMER_FRAME_LABEL_TEXT);
   private final JButton applyButton = new JButton(StringConstants.APPLY_TIMER_FRAME_BUTTON_TEXT);
+  private final JTextField enterTimerValueField = new JTextField();
+  private int pauseInterval = 20000; // milliseconds
 
   public TimingFrame() {
     super(StringConstants.TIMER_FRAME_DIALOG_TITLE);
@@ -44,7 +42,10 @@ public class TimingFrame extends JFrame implements ActionListener, DocumentListe
     JPanel buttonPanel = new JPanel();
     buttonPanel.setBackground(Color.GREEN.darker());
     buttonPanel.setLayout(new FlowLayout());
-
+    
+    JLabel enterTimerValueLabel = new JLabel(StringConstants.ENTER_TIMER_VALUE_LABEL_TEXT);
+    JLabel secondsLabel = new JLabel(StringConstants.SECONDS_TIMER_FRAME_LABEL_TEXT);
+    
     applyButton.setEnabled(false);
     addItemsToAppropriateListener();
 
@@ -104,9 +105,6 @@ public class TimingFrame extends JFrame implements ActionListener, DocumentListe
       // Convert to milliseconds
       pauseInterval = pauseInterval * 1000;
 
-      // Set value of pause interval
-      setPauseValue(pauseInterval);
-
       /* To prevent a situation where the dialog can be closed with no value
        * we will set the pauseInterval to 20 seconds by default and set it in
        * the text field
@@ -131,14 +129,6 @@ public class TimingFrame extends JFrame implements ActionListener, DocumentListe
    */
   public int getPauseValue() {
     return pauseInterval;
-  }
-
-  /*
-   * This method is a private setter which is used to set the value of the
-   * pause interval at which the mouse moves.
-   */
-  private void setPauseValue(int pauseInterval) {
-    this.pauseInterval = pauseInterval;
   }
 
   /*
