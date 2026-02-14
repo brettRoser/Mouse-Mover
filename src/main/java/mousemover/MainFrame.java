@@ -1,26 +1,12 @@
 package mousemover;
 
-import java.awt.AWTException;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Robot;
-import java.awt.Toolkit;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.KeyStroke;
 
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame implements ActionListener, Runnable {
@@ -54,7 +40,7 @@ public class MainFrame extends JFrame implements ActionListener, Runnable {
   public MainFrame() {
     super(StringConstants.MAIN_APPLICATION_TITLE);
     final int FRAME_WIDTH = 480;
-    final int FRAME_HEIGHT = 90;
+    final int FRAME_HEIGHT = 100;
     setSize(FRAME_WIDTH, FRAME_HEIGHT);
 
     JPanel buttonPanel = new JPanel();
